@@ -12,13 +12,6 @@ from joblib import Parallel, delayed
 #Generate sample images
 NUM_IMAGES = 1
 
-def generate_images(num_images):
-    for i in range(0,num_images):
-        Z = np.random.rand(2000, 2000)
-        plt.imsave('%03i.png'%i, Z)
-        snipZ = Z[200:300, 200:300]
-        plt.imsave('%03i.snip.png'%i, snipZ)
-
 def rgb_to_hex(r,g,b):
 	hexchars = "0123456789ABCDEF"
 	return "#" + hexchars[r / 16] + hexchars[r % 16] + hexchars[g / 16] + hexchars[g % 16] + hexchars[b / 16] + hexchars[b % 16]
@@ -76,7 +69,7 @@ def get_colors_of_every_pixel(f):
 
 def resize_and_get_pixels(url, new_width, new_height):
     response = requests.get(url)
-    image_name = url.split('/')[-1]
+    image_name = url.slice('/')[-1]
     f = resize(url, new_width, new_height)
     return get_image(f)
 
