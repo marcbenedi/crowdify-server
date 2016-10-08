@@ -32,7 +32,7 @@ def get_instructions(pos_x,pos_y):
                         'duration': "1000",
                         'shake': "yes"
                         },{
-                        'color': "#F00FF",
+                        'color': "#F00FFF",
                         'flash': "no",
                         'vibrate': "no",
                         'duration': "1000",
