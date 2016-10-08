@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import image_slicer
 import time
 import numpy
+import requests
 from multiprocessing import Pool
 from PIL import Image
 from scipy import misc
@@ -73,8 +74,10 @@ def resize(path, new_width, new_height):
 def get_colors_of_every_pixel(f):
     im = Image.open(f)
 
-def resize_and_get_pixels(path, new_width, new_height):
-    f = resize(path, new_width, new_height)
+def resize_and_get_pixels(url, new_width, new_height):
+    response = requests.get(url)
+    image_name = url.split('/')[-1]
+    f = resize(url, new_width, new_height)
     return get_image(f)
 
 def get_image(image_path):
@@ -93,9 +96,9 @@ def get_image(image_path):
         return None
     return hex_values
 
-init_miliseconds = int(round(time.time() * 1000))
-print resize_and_get_pixels("img/face.png",20,50)
-end_miliseconds = int(round(time.time() * 1000))
-print end_miliseconds-init_miliseconds
+# init_miliseconds = int(round(time.time() * 1000))
+# print resize_and_get_pixels("img/face.png",20,50)
+# end_miliseconds = int(round(time.time() * 1000))
+# print end_miliseconds-init_miliseconds
 
 #get_matrix_colors('img/face.png', 50, 50)

@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 from flask import json
 from flask import request
+import pymongo
+import image_processor
 
 from flask_cors import CORS, cross_origin
 
@@ -23,7 +25,7 @@ def authenticate():
 
 @app.route('/get_instructions/<string:pos_x>/<string:pos_y>', methods=["GET"])
 def get_instructions(pos_x,pos_y):
-    return jsonify({'behaviour': [{
+    return jsonify({'behavior': [{
                         'color': "#FFF000",
                         'flash': "yes",
                         'vibrate': "yes",
@@ -38,12 +40,17 @@ def get_instructions(pos_x,pos_y):
                         }
                     ]})
 
-@app.route("/add_figure/<string:event_name>", methods=["POST"])
-def add_figure(event_name):
+@app.route("/add_figure", methods=["POST"])
+def add_figure():
     try:
         data = json.loads(request.data)
         image_url = data["url"]
+        tpe = data["type"]
         duration = data["duration"]
+        n = data["n"]
+        m = data["m"]
+        colors = image_processor.resize_and_get_pixels(image_url,n,m)
+        return jsonify({'colors':colors})
     except Exception as e:
             return str(e)
 
