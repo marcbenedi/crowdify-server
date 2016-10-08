@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, jsonify
 import json
+import request
 app = Flask(__name__)
 
 @app.route("/")
@@ -8,12 +9,17 @@ def index():
 
 @app.route("/create_event", methods=["POST"])# POST
 def create_event():
-    ata = json.loads(request.data)
-    return "Creating event!"
+    #data = request["data"]
+    #data = json.loads(request.data)
+    #if data.get('password') != "gentleman123":
+        #return "Wrong password!"
 
-@app.route("/<string:event_name>/<string:pos_x>/<string:pos_y>", methods=["GET"])# POST
-def get_instructions(event_name,pos_x,pos_y):
-    return "Geting instructions for the event " + event_name + " at " + pos_x + " " + " " + pos_y
+    print(request.data)
+    return "thanks for your visit"
+
+@app.route("/<string:pos_x>/<string:pos_y>", methods=["GET"])# GET INFO
+def get_instructions(pos_x,pos_y):
+    return "Geting instructions for the event " + " at " + pos_x + " " + " " + pos_y
 
 @app.route("/add_figure/<string:event_name>", methods=["POST"])
 def add_figure(event_name):

@@ -1,0 +1,19 @@
+{
+  "array": [
+    {
+      "type": "Mosaic",
+      "color": "(0,0,0,0)//o en hex",
+      "hora": "19:00",
+      "duracio": "13"
+    },
+    {
+      "type": "Animation",
+      "colors": [
+        {"color": "(0,0,0,0)", "duracio":"3"},
+        {"color": "(1,0,0,0)", "duracio":"3"},
+        {"color": "(0,2,0,0)", "duracio":"3"}
+        ],
+      "hora": "19:00"
+    }
+  ]
+}
