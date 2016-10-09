@@ -16,14 +16,22 @@ taula = None
 
 @app.route("/")
 def index():
-    return "Hello World!"
+    return "Welcome to Future!"
+
+@app.route("/get_tetris/<string:x>/<string:y>", methods=["GET"])
+def get_tetris_position(x, y):
+    json_file = open('tetris.json')
+    js = json_file.read()
+    dct = json.loads(js)
+    pos = x+"_"+y
+    return json.dumps(dct[pos])
 
 @app.route('/authenticate', methods=['PUT'])
 def authenticate():
     info = json.loads(request.data)
     try:
         pwd = info['password']
-        # get an admin session
+        #TODO: admin login
         return jsonify({'pwd': pwd}), 200
     except Exception as e:
         return str(e)
@@ -42,6 +50,7 @@ def add_figure():
         db = client.crowdify_database
         global taula
         taula = db.test_collection
+        taula.remove()
         #Giro las linies perque s'accedeix a data abans de llegirla
         data = json.loads(request.data)
         taula.insert_one({"duration": data["duration"]})
@@ -78,4 +87,4 @@ def construct_instructions(colors_list, dr):
         result = taula.insert_one(add_instruction)
 
 if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)
