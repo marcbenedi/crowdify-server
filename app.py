@@ -28,16 +28,11 @@ def authenticate():
     except Exception as e:
         return str(e)
 
-@app.route('/<string:url>', methods=["GET"])
-def get_hex_colors(url):
-    global taula2
-    result = taula2.find_one({"url": url})
-    return json
-
 @app.route('/get_instructions/<string:pos_x>/<string:pos_y>', methods=["GET"])
 def get_instructions(pos_x,pos_y):
     global taula
     resultat = taula.find_one({"x":int(pos_x),"y":int(pos_y)})
+    print resultat
     return json.dumps(resultat, sort_keys=True, indent=4, default=json_util.default)
 
 @app.route("/add_figure", methods=["POST"])
