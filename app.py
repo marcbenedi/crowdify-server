@@ -69,16 +69,16 @@ def add_figure():
         n = data["n"]
         m = data["m"]
         colors = image_processor.resize_and_get_pixels(image_url,n,m)
-        construct_instructions(colors)
+        construct_instructions(colors, data["duration"])
         result = taula.find_one({"x":0,"y":1})
         print result
         return jsonify({'colors':colors})
     except Exception as e:
             return str(e)
 
-def construct_instructions(colors_list):
+def construct_instructions(colors_list, dr):
     #duration = crowdify_database['duration']
-    duration = ""
+    duration = dr
     #FIND DURATION IN MONGODB
     for color in colors_list:
         #add_instruction = jsonify({
@@ -97,7 +97,7 @@ def construct_instructions(colors_list):
             "flash": "yest",
             "type": "static",
             #"duration": duration,
-            "duration": "300",
+            "duration": duration,
             "shake": "yes",
             "vibrate": "yes"
         }
