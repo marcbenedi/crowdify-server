@@ -1,0 +1,196 @@
+html, body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image:url("../img/Ngw75mX.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li a {
+    display: block;
+    width: 60px;
+    font-family: 'Product Sans', Arial, sans-serif;
+}
+.text {
+  font-family: 'Product Sans', Arial, sans-serif;
+  color: #333;
+  font-weight: 400;
+}
+#start {
+  margin: 0 auto 0 auto;
+  display: block;
+  text-align: center;
+  width: 150px;
+  padding: 20px;
+  background-color: #2bbbad;
+  color: white;
+  font-weight: 400 !important;
+  transition: all 0.5s ease-in-out;
+}
+
+#start:hover {
+    color: #2bbbad;
+    text-decoration: none;
+    background-color: white;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+#logo{
+    background-image: url("../img/logo.png");
+    width: 100px;
+    height: 100px;
+}
+
+.lbl {
+  color: #333;
+  display: block;
+  font-size: 15px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.content {
+  background: white;
+  border-radius: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 70px;
+}
+
+.titol{
+    font-family: 'Product Sans', Arial, sans-serif;
+    margin: 10% auto 10% auto;
+    text-align: center;
+    font-size: 6em;
+    color:#F5F5F5;
+    font-weight: 400;
+}
+
+.right {
+  float: right;
+}
+.space{
+    width: 100%;
+    height: 350px;
+}
+
+.formulari {
+    background-color: white;
+    text-align: center;
+    display: block;
+    margin: 0 auto 50px auto;
+    height: 300px;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.demo{
+    padding-top: 30px;
+    color: black;
+}
+.thead-inverse{
+    background-color: #9E9E9E;
+}
+tbody{
+    background-color: #E0E0E0;
+}
+.table{
+    margin: 0 auto 0 auto!important;
+    width: 100%!important;
+}
+th{
+    width: 20%;
+    text-align: center!important;
+}
+form{
+    margin: 0 0 40px 0;
+}
+input{
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 11px 20px 12px;
+  border: 1px solid #cccbcb;
+  outline: 0;
+  color: #161616;
+  background-color: #fff;
+  line-height: 25px;
+  font-size: 14px;
+  margin-bottom: 5px !important
+}
+.block {
+  display: block;
+}
+#submit {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 50;
+}
+#main-img-container {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 52px;
+  background: url("");
+  border-radius: 2px;
+  text-align: center;
+}
+#main-img {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+#main-img-container span {
+  color: #333;
+  font-size: 15px;
+  letter-spacing: 4px;
+}
+#bottom_form{
+    margin-top: 2%;
+}
+#original_image{
+    width:304px;
+    height:228px;
+}
+#converted_image{
+    width:304px;
+    height:228px;
+}
+
+#lagraella td{
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #FFFFFF;
+}
+
+.footer {
+    width: 100%;
+    font-size: 14px;
+    color:#333;
+    text-align: center;
+    background: white;
+}
